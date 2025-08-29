@@ -1,0 +1,188 @@
+/* --- Timeline-style Sections (Experience & Education) --- */
+
+/* --- Experience Section (#experience) --- */
+.experience-grid {
+  width: min(1050px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  align-items: stretch;
+}
+.experience-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  height: 100%;
+}
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elev-4);
+  background: var(--surface-alt);
+}
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.company-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.experience-card h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.experience-card p {
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.experience-card ul {
+  padding-left: 18px;
+  margin-top: 2px;
+}
+.experience-card ul li {
+  list-style: square;
+  color: var(--text-90);
+  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* --- Education & Certifications Section (#education) --- */
+.edu-cert-grid {
+  width: min(1050px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  align-items: stretch;
+}
+.education-card,
+.cert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  text-align: left;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  height: 100%;
+}
+.education-card:hover,
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elev-4);
+  background: var(--surface-alt);
+}
+
+/* ADDED THIS RULE for the divider line */
+.education-divider {
+  border: none;
+  height: 1px;
+  background-color: var(--border);
+  margin: 20px 0;
+}
+
+.education-card h3,
+.cert-card h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.education-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-90);
+  margin-bottom: 8px;
+}
+.education-card p:first-of-type {
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
+}
+.education-card p:nth-of-type(2) {
+  font-style: italic;
+  color: var(--muted);
+}
+.education-card p strong {
+  color: var(--primary);
+}
+.cert-card ul {
+  padding: 0;
+  margin: 0;
+}
+.cert-card ul li {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--text-92);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease,
+    box-shadow 0.25s ease;
+  margin-bottom: 12px;
+}
+.cert-card ul li:hover {
+  background: var(--primary-a18);
+  color: var(--primary);
+  transform: translateX(2px);
+  box-shadow: 0 10px 20px var(--primary-a22);
+}
+
+/* ADDED THIS RULE for the certificate links */
+.cert-card ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  margin: -12px -14px;
+  padding: 12px 14px;
+}
+
+/* Light mode overrides for timeline cards */
+body.light-mode .experience-card,
+body.light-mode .education-card,
+body.light-mode .cert-card {
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+body.light-mode .experience-card h3,
+body.light-mode .education-card h3,
+body.light-mode .cert-card h3 {
+  color: #0f172a;
+}
+body.light-mode .education-card p strong {
+  color: var(--primary);
+}
+body.light-mode .cert-card ul li:hover {
+  background: var(--primary-a10);
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-card {
+    min-height: auto;
+  }
+}

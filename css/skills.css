@@ -1,0 +1,144 @@
+/* --- Skills Section (#skills) --- */
+#skills {
+  padding: 56px 20px;
+}
+#skills p {
+  margin-bottom: 48px;
+}
+
+/* Main grid for the category cards */
+.skills-grid {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Styling for each category card (e.g., Frontend, Backend) */
+.category-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elev-2);
+}
+
+/* Header within each card (main icon + title) */
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.category-icon {
+  font-size: 28px;
+  color: var(--primary);
+  width: 30px;
+  text-align: center;
+}
+.category-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Grid for the individual skills within a card */
+.category-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 20px;
+}
+
+/* Styling for each individual skill item (icon + name) */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.skill-item i {
+  font-size: 32px;
+
+  /* Smooth color transition */
+  transition: color 0.3s ease;
+}
+.skill-item span {
+  text-align: center;
+}
+
+/* --- ICON COLORS --- */
+/* The icon with the specific class gets its brand color */
+.html-icon {
+  color: #e34f26;
+}
+.css-icon {
+  color: #1572b6;
+}
+.tailwind-icon {
+  color: #06b6d4;
+}
+.js-icon {
+  color: #f7df1e;
+}
+.react-icon {
+  color: #61dafb;
+}
+.nextjs-icon {
+  color: #cccccc;
+} /* Light Gray for Dark Mode */
+.python-icon {
+  color: #3776ab;
+}
+.numpy-icon {
+  color: #4d77cf;
+}
+.pandas-icon {
+  color: #150458;
+}
+.opencv-icon {
+  color: #5c8ebf;
+}
+.mongodb-icon {
+  color: #47a248;
+}
+.postgresql-icon {
+  color: #4169e1;
+}
+.redis-icon {
+  color: #dc382d;
+}
+.git-icon {
+  color: #f05032;
+}
+.docker-icon {
+  color: #2496ed;
+}
+.aws-icon {
+  color: #ff9900;
+}
+.linux-icon {
+  color: #fcc624;
+}
+.nodejs-icon {
+  color: #339933;
+}
+.express-icon {
+  color: #cccccc;
+} /* Light Gray for Dark Mode */
+
+/* --- LIGHT MODE ICON OVERRIDES --- */
+/* This section sets a different color for specific icons ONLY in light mode */
+body.light-mode .nextjs-icon {
+  color: #444444;
+} /* Dark Gray for Light Mode */
+body.light-mode .express-icon {
+  color: #444444;
+} /* Dark Gray for Light Mode */

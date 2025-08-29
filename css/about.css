@@ -1,0 +1,108 @@
+/* --- About Section (#about) --- */
+
+#about {
+  padding: 72px 0;
+}
+.about-grid {
+  width: min(1100px, 92%);
+  margin: 28px auto 0;
+  display: grid;
+  /* CHANGED: Gave the text column more space than the image column */
+  grid-template-columns: 1.5fr 1fr;
+  gap: 50px; /* Increased gap slightly for better separation */
+  align-items: center;
+}
+.about-text {
+  text-align: left;
+  line-height: 1.75;
+}
+.about-text p {
+  color: var(--text-86);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.about-text strong {
+  color: var(--primary);
+}
+.about-gif img {
+  width: 100%;
+  /* CHANGED: Reduced the max-width of the image on large screens */
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.about-gif img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px var(--primary-a20);
+}
+
+/* --- STYLES FOR TECH LIST --- */
+.tech-heading {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  gap: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.tech-list li {
+  color: var(--muted);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tech-list li i {
+  color: var(--primary);
+  font-size: 12px;
+}
+/* --- END OF TECH LIST STYLES --- */
+
+/* Light mode overrides */
+body.light-mode .about-text p {
+  color: var(--text);
+}
+body.light-mode .about-gif img {
+  box-shadow: var(--shadow);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* Stacks to a single column */
+    text-align: center;
+    gap: 24px;
+  }
+  .about-text {
+    text-align: center;
+  }
+  .about-gif img {
+    /* CHANGED: Reduced the image size for tablet view */
+    max-width: 300px;
+  }
+  .tech-list {
+    display: inline-grid;
+    text-align: left;
+  }
+}
+@media (max-width: 500px) {
+  .about-gif img {
+    /* CHANGED: Reduced the image size for mobile view */
+    max-width: 240px;
+  }
+  .tech-list {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+}

@@ -1,0 +1,35 @@
+/* --- Theme Toggle Button --- */
+
+#mode-toggle {
+  border: none;
+  background: transparent;
+  color: var(--text-85);
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  transition: transform 0.25s ease, background 0.25s ease;
+
+  /* Flex properties to center the SVG icon */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base styles for the SVG icon */
+#mode-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-85); /* Controls the icon color */
+  transition: stroke 0.25s ease;
+}
+
+/* Your chosen hover effect for the button */
+#mode-toggle:hover {
+  transform: translateY(-2px) scale(1.1);
+  background: var(--primary-a10);
+}
+
+/* Make the icon's color change on hover as well */
+#mode-toggle:hover svg {
+  stroke: var(--primary);
+}

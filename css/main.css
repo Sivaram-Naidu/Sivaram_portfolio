@@ -1,0 +1,16 @@
+/* --- Main CSS Entry Point --- */
+/* This file imports all other CSS modules. */
+/* Order is important for the cascade. */
+
+@import url("base.css");
+@import url("layout.css");
+@import url("theme-toggle.css");
+@import url("animations.css");
+@import url("buttons.css");
+@import url("hero.css");
+@import url("about.css");
+@import url("skills.css");
+@import url("timeline.css"); /* Contains Experience & Education */
+@import url("projects.css");
+/* I've added contact.css for better modularity */
+@import url("contact.css");

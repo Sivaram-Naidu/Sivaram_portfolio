@@ -1,0 +1,189 @@
+/* --- Main Layout: Header, Nav, Sections --- */
+
+section {
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease-in-out;
+}
+.header-hidden {
+  transform: translateY(-100%);
+}
+body.light-mode header {
+  box-shadow: var(--shadow);
+}
+
+nav {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  background: linear-gradient(45deg, var(--primary), #8ec5ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: filter 0.3s ease;
+  text-decoration: none;
+}
+.logo:hover {
+  filter: brightness(1.2);
+}
+.logo span {
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Desktop Nav Links */
+.nav-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links a {
+  position: relative;
+  color: var(--text-85);
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-links a:hover {
+  color: var(--primary);
+  background-color: var(--primary-a10);
+}
+body.light-mode .nav-links a {
+  color: #27313f;
+}
+body.light-mode .nav-links a:hover {
+  color: var(--primary);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* General Section Framing */
+section {
+  padding: 64px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#home,
+#about {
+  min-height: 100vh;
+}
+section:not(#home) h2 {
+  display: inline-block; /* Makes the capsule fit the text width */
+  padding: 10px 30px; /* Creates space inside the capsule */
+  font-size: 28px;
+  font-weight: 700;
+
+  /* Themed capsule background with white text for contrast */
+  background: var(--primary);
+  color: #fff;
+
+  border-radius: 50px; /* A large value creates the pill shape */
+
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+section p {
+  max-width: 800px;
+  color: var(--muted);
+}
+body.light-mode section h2 {
+  color: var(--primary);
+}
+body.light-mode section h2::after {
+  background: var(--primary);
+}
+section + section {
+  border-top: 1px solid var(--border);
+}
+
+/* --- Responsive Layout Tweaks --- */
+@media (max-width: 1024px) {
+  section {
+    padding: 56px 18px;
+  }
+}
+
+@media (max-width: 820px) {
+  .nav-links {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    transform: translateY(-150%);
+    transition: transform 0.4s ease-in-out;
+  }
+  .nav-links.nav-open {
+    transform: translateY(0);
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .nav-links a {
+    font-size: 18px;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    min-height: unset;
+  }
+  #home {
+    padding-top: 96px;
+  }
+}
+/* Add this new rule to specifically hide the line in the hero section */
+#home h2::after {
+  display: none;
+}

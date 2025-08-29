@@ -1,0 +1,34 @@
+/* --- Animations & Effects --- */
+
+/* Performance hint for browsers */
+h2,
+.logo,
+.btn,
+.project,
+.skill-card,
+.experience-card,
+.education-card,
+.cert-card,
+.connect-card,
+.social-card {
+  will-change: transform, box-shadow, background, color;
+}
+
+/* Subtle gradient backdrops for some sections in dark mode */
+#experience,
+#education,
+#contact {
+  background: radial-gradient(
+      1000px 400px at 50% -10%,
+      var(--primary-a07),
+      transparent 60%
+    ),
+    var(--bg);
+}
+
+/* Reset for light mode */
+body.light-mode #experience,
+body.light-mode #education,
+body.light-mode #contact {
+  background: var(--bg);
+}

@@ -1,0 +1,160 @@
+/* --- Contact Section (#contact) --- */
+
+#contact h2 {
+  color: var(--primary);
+}
+#contact h2::after {
+  background: var(--primary);
+}
+
+#contact p {
+  color: var(--text-90);
+  font-size: 15px;
+  max-width: 720px;
+  margin-bottom: 26px;
+}
+
+.contact-grid {
+  width: min(950px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.connect-card,
+.social-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  text-align: left;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.connect-card:hover,
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--elev-4);
+  background: var(--surface-alt);
+}
+
+.connect-card h3,
+.social-card h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.connect-card p,
+.social-card p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: var(--text-92);
+}
+.connect-card i,
+.social-card i {
+  color: var(--primary);
+  min-width: 18px;
+  text-align: center;
+}
+
+.social-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-92);
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+.social-card a:hover {
+  color: var(--primary);
+  transform: translateX(2px);
+}
+
+/* Light mode overrides */
+body.light-mode .connect-card,
+body.light-mode .social-card {
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+body.light-mode .connect-card h3,
+body.light-mode .social-card h3 {
+  color: #0f172a;
+}
+
+/* --- Contact Form Styles --- */
+.form-heading {
+  margin-top: 40px;
+  font-size: 24px;
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  padding-top: 40px;
+  width: min(700px, 92%);
+}
+
+.contact-form {
+  width: min(700px, 92%);
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-85);
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-a20);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-button {
+  align-self: flex-start;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+  background-color: var(--bg);
+}

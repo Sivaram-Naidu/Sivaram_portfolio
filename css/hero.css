@@ -1,0 +1,148 @@
+/* --- Hero Section (#home) --- */
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 96px;
+  padding-bottom: 64px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  flex-wrap: wrap-reverse;
+}
+
+.hero-image-container {
+  flex-shrink: 0;
+}
+.hero-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary);
+  box-shadow: var(--elev-3);
+  transition: transform 0.3s ease;
+}
+.hero-photo:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.hero-text {
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.hero-text h1 span {
+  color: var(--primary);
+}
+
+.hero-text h2 {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  position: relative;
+  /* Make space for the typed text */
+  min-height: 80px;
+}
+
+/* NEW: Style for the blinking cursor from Typed.js */
+#typed-text {
+  color: var(--primary);
+}
+.typed-cursor {
+  color: var(--primary);
+  font-weight: 300;
+}
+.hero-text p {
+  font-size: 16.5px;
+  line-height: 1.65;
+  margin: 12px 0 28px 0;
+}
+
+.home-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.social-icons {
+  display: flex;
+  gap: 26px;
+  justify-content: auto;
+  margin-top: 48px;
+}
+.social-icons a {
+  font-size: 22px;
+  color: var(--muted);
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+.social-icons a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* NEW: Fade-in animation for text elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0; /* Start hidden */
+} /* Add delays so elements appear one after another */
+.hero-text h1.fade-in {
+  animation-delay: 0.2s;
+}
+.hero-text h2.fade-in {
+  animation-delay: 0.4s;
+}
+.hero-text p.fade-in {
+  animation-delay: 0.6s;
+}
+.hero-text .home-actions.fade-in {
+  animation-delay: 0.8s;
+}
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 820px) {
+  .hero-content {
+    gap: 30px;
+  }
+  .hero-text {
+    text-align: center;
+  }
+  .home-actions {
+    justify-content: center;
+  }
+  .hero-photo {
+    width: 220px;
+    height: 220px;
+  }
+  .hero-text h2 {
+    min-height: 110px;
+  } /* More space on mobile */
+}
+
+/* The hero-text h2::after rule is no longer needed, so it has been removed. */
